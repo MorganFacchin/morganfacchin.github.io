@@ -75,7 +75,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             width: 100%;
             max-width: 800px;
-            margin: 0 auto; /* Center the content box */
+            margin: 20px auto; /* Add this line to create a gap between content boxes */
         }
 
         section {
@@ -124,7 +124,7 @@
             </ul>
         </nav>
         <div class="social-icons">
-            <a href="https://x.com/MorganFacchin" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/MorganFacchin" target="_blank">&Xopf;</a>
             <a href="https://www.instagram.com/morgfacc/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://scholar.google.com/citations?user=Sv4_ip0AAAAJ&hl=fr&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i></a>
         </div>
@@ -133,21 +133,51 @@
     <div class="content">
         <div class="content-box">
             <section id="home" class="active">
-                <h2>Home</h2>
                 <p>Hello! I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things! Enjoy!</p>
             </section>
-            
-            <section id="Projects">
-                <h2>Projects</h2>
-                <p>Here you can add more detailed information about yourself, your background, interests, and goals.</p>
-            </section>
-            
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Feel free to contact me through my email <a href="mailto:morgan.facchin@icloud.com">morgan.facchin@icloud.com</a></p>
+        </div>
+        
+        <div class="content-box">
+            <section id="hh" class="active">
+                <p>Hello! I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things! Enjoy!</p>
             </section>
         </div>
     </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chat with Mistral AI</h1>
+    <div id="chat-container">
+        <input type="text" id="user-input" placeholder="Type your message here..." />
+        <button onclick="sendMessage()">Send</button>
+        <div id="chat-output"></div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput }),
+            });
+
+            const data = await response.json();
+            document.getElementById('chat-output').innerText = data.response;
+        }
+    </script>
+</body>
+</html>
+
 
     <script>
         function showTab(tabId) {
