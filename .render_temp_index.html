@@ -111,6 +111,33 @@
         .social-icons a:nth-child(3):hover {
             color: #4285F4; /* Google Scholar color */
         }
+
+
+
+
+   #chat-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        #chat-output {
+            margin-top: 20px;
+        }
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #d1e7dd;
+        }
+        .bot-message {
+            background-color: #f8d7da;
+        }
+
     </style>
 </head>
 <body>
@@ -144,15 +171,10 @@
         </div>
     </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-</head>
-<body>
-    <h1>Chat with Mistral AI</h1>
+
+
+
+
     <div id="chat-container">
         <input type="text" id="user-input" placeholder="Type your message here..." />
         <button onclick="sendMessage()">Send</button>
@@ -163,7 +185,7 @@
         async function sendMessage() {
             const userInput = document.getElementById('user-input').value;
 
-            const response = await fetch('/chat', {
+            const response = await fetch('http://localhost:5000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -172,11 +194,18 @@
             });
 
             const data = await response.json();
-            document.getElementById('chat-output').innerText = data.response;
+            document.getElementById('chat-output').innerHTML +=
+                `<div class="chat-message user-message">${userInput}</div>`;
+            document.getElementById('chat-output').innerHTML +=
+                `<div class="chat-message bot-message">${data.response}</div>`;
+
+            document.getElementById('user-input').value = '';
         }
     </script>
-</body>
-</html>
+
+
+
+
 
 
     <script>
