@@ -164,44 +164,7 @@
             </section>
         </div>
         
-        <div class="content-box">
-            <section id="hh" class="active">
-                <p>Hello! I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things! Enjoy!</p>
-            </section>
-        </div>
-    </div>
 
-
-
-
-
-    <div id="chat-container">
-        <input type="text" id="user-input" placeholder="Type your message here..." />
-        <button onclick="sendMessage()">Send</button>
-        <div id="chat-output"></div>
-    </div>
-
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById('user-input').value;
-
-            const response = await fetch('http://localhost:5000/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message: userInput }),
-            });
-
-            const data = await response.json();
-            document.getElementById('chat-output').innerHTML +=
-                `<div class="chat-message user-message">${userInput}</div>`;
-            document.getElementById('chat-output').innerHTML +=
-                `<div class="chat-message bot-message">${data.response}</div>`;
-
-            document.getElementById('user-input').value = '';
-        }
-    </script>
 
 
 
