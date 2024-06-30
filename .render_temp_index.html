@@ -112,10 +112,7 @@
             color: #4285F4; /* Google Scholar color */
         }
 
-
-
-
-   #chat-container {
+        #chat-container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
@@ -137,7 +134,6 @@
         .bot-message {
             background-color: #f8d7da;
         }
-
     </style>
 </head>
 <body>
@@ -158,27 +154,43 @@
     </div>
     
     <div class="content">
-        <div class="content-box">
-            <section id="home" class="active">
+        <section id="home" class="active">
+            <div class="content-box">
                 <p>Hello! I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things! Enjoy! <br> <br> THIS IS UNDER CONSTRUCTION </p>
-            </section>
-        </div>
+            </div>
+        </section>
         
+        <section id="Projects">
+            <div class="content-box">
+                <p>Project 1: Description of Project 1.</p>
+            </div>
+            <div class="content-box">
+                <p>Project 2: Description of Project 2.</p>
+            </div>
+        </section>
 
-
-
-
-
-
+        <section id="contact">
+            <div class="content-box">
+                <p>Contact me at <a href="mailto:morgan.facchin@icloud.com">morgan.facchin@icloud.com</a></p>
+            </div>
+        </section>
+    </div>
 
     <script>
         function showTab(tabId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
-                section.classList.remove('active');
+                if (section.id === tabId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
             });
-            document.getElementById(tabId).classList.add('active');
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            showTab('home'); // Show the home tab by default
+        });
     </script>
 </body>
 </html>
