@@ -170,12 +170,32 @@ body {
     margin-top: 5px;
 }
 
+.float-image-with-caption {
+    float: right;
+    margin: 0 0 10px 15px;
+    width: 200px; /* Set desired width */
+    text-align: center;
+    font-size: 0.8em;
+    color: #555;
+}
+
+.float-image-with-caption img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.float-image-with-caption .caption {
+    margin-top: 5px;
+}
+
 
     </style>
 </head>
 <body>
     <div class="topbar">
-        <img src="profile-photo.jpg" alt="Your Photo">
+        <img src="profile-photo.png" alt="Your Photo">
         <nav>
             <ul>
                 <li><a href="#home" onclick="showTab('home', event)">Home</a></li>
@@ -194,7 +214,7 @@ body {
     <div class="content">
         <section id="home" class="active">
             <div class="content-box">
-<p>I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things. Enjoy! (This is still under construction) </p>
+<p>I am Morgan Facchin, currently a physicist at the University of St Andrews in Scotland. Here, you can find information about me, my work, my projects, and maybe a few random things. Enjoy! </p>
             </div>
         </section>
 
@@ -206,21 +226,39 @@ body {
 <section id="Projects">
 
 
-            <div class="content-box">
-<p>
-<h1>Speckle patterns</h1>
-Speckle patterns are granular intensity patterns that result from the random interference of light. Such patterns appear whenever coherent light is randomised, for example when a laser beam reflects off a rough surface. 
-<br> <br>
-This is quite a universal phenomenon, although not easily observable under ordinary conditions due to the lack of coherence of natural light. Since the invention of lasers, however, the production of speckle patterns has become extremely simple, and a whole field of optics has emerged around it, particularly in the domain of metrology. 
-<br> <br>
-That was the subject of my PhD, where I did lots of interresting things, like measuring displacements 10 times smaller than an atom, or measuring variations in air density of 1 part in a billion! Find out more in my publications. 
-</p>
 
-            </div>
+<div class="content-box">
+    <h1>Optical computing</h1>
+I will soon be working in the Complex Media lead group by Prof. Gigan to work on optical computing. This is a fascinating topic where light is used to perform computation, rather than standard electronics. More on this soon! 
+    <br><br>
+
+</div>
+
+
+<div class="content-box">
+    <h1>Speckle patterns</h1>
+<div class="float-image-with-caption">
+    <img src="speckle.png" alt="Speckle pattern">
+    <div class="caption">Example of a speckle pattern</div>
+</div>    
+<p>
+    Speckle patterns are granular intensity patterns that result from the random interference of light. Such patterns appear whenever coherent light is randomised, for example when a laser beam reflects off a rough surface. 
+    <br><br>
+    This is quite a universal phenomenon, although not easily observable under ordinary conditions due to the lack of coherence of natural light. Since the invention of lasers, however, the production of speckle patterns has become extremely simple, and a whole field of optics has emerged around it, particularly in the domain of metrology. 
+    <br><br>
+    That was the subject of my PhD, where I did lots of interresting things, like measuring displacements 10 times smaller than an atom, or measuring variations in air density of 1 part in a billion! Find out more in my publications.
+    </p>
+</div>
+
 
 <div class="content-box">
 <p><h1>Arsenical books  </h1>
-Recently I have been involved in a more applied and quite fun project: detecting Arsenic in old books. In the 1800s, bookbinders used a pigment, Emerald Green, for its deep vibrant green colour. However, Emerald Green contains Arsenic, which is highly toxic. It's not that they didn't know: they also used Emerald Green as an insecticide, at the same period! This pigment was also used in clothes and in wall paints. Lots of theater actors died from it, from which people inferred a curse. It might even be what killed Napoleon, who liked the colour so much that he painted parts of his house with it. 
+<div class="float-image-with-caption">
+    <img src="book.png" alt="Speckle pattern">
+    <div class="caption">Prototype of Emerald Green detector in action (credit: Edward Martin)</div>
+</div>    
+<p>
+Recently I have been involved in a more applied and quite fun project: detecting Arsenic in old books. In the 1800s, bookbinders used a pigment, Emerald Green, for its deep vibrant green colour. However, Emerald Green contains Arsenic, which is highly toxic. It's not that they didn't know: they also used Emerald Green as an insecticide, at the same period! This pigment was also used in clothes and in wallpaper. Lots of theater actors died from it, from which people inferred a curse. It might even be what killed Napoleon, who liked the colour so much that he painted parts of his house with it. 
 <br> <br>
 The presence of arsenic in book covers has been known for a long time, but only recently has it been recognised as a serious health and safety issue. Big national libraries in Germany and France have started to quanrantine thousands of potentially contaminated books, mainly based on visual identification and bibliographic data. However, there is currently no efficent way to instrumentally detect the presence of arsenic. The exsisting techniques (X ray fluorescence or Raman spectroscopy) are slow, require expensive equipment, specialised personel, and data analysis. 
 <br> <br>
@@ -230,6 +268,11 @@ My team and I have develloped an optical technique to solve these issues. We imp
 
 <div class="content-box">
 <p><h1>Quantum Quack </h1>
+<div class="float-image-with-caption">
+    <img src="image1.png" alt="Speckle pattern">
+    <div class="caption"></div>
+</div>    
+<p>
 This is a personal project I have been working on with my friend <a href="https://github.com/rafkol98" target="_blank" style="color: yellow;">Rafael Kollyfas</a>. Quantum Quack is a website and iOS app that allows one to make quantum decisions. It picks one output in a list of options the user provides, using quantum random numbers, rather than ordinary random numbers. This has fascinating implications that vary depending on the different interpretations of quantum mechanics. Here is a summary for the two main ones, illustrated through the hypothetical and highly relevant example of choosing between an Italian and a Chinese restaurant.
 
 <br><br> 
@@ -258,7 +301,7 @@ Quantum Quack a <a href="https://quantum-quack.org" target="_blank" style="color
 
 How it works:
 
-The app generates quantum random numbers by using the smartphone's camera. Indeed, the detection of light by a pixel is subject to quantum fluctuations (known as shot noise), and constitutes a quantum measurement as discussed above. When prompted, the app takes a picture and uses these fluctuations to produce a random number, which is then used to pick an options with equal probabilities. <br>
+The app generates quantum random numbers by using the smartphone's camera. The detection of light by a pixel is subject to quantum fluctuations (known as shot noise), and constitutes a quantum measurement. When prompted, the app takes a picture and uses these fluctuations to produce a random number, which is then used to pick an options with equal probabilities. <br>
 Shortcuts are available for common entries, such as yes/no, directions (for quantum exploring), or digits. 
 
             </div>
